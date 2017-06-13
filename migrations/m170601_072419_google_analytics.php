@@ -62,7 +62,7 @@ class m170601_072419_google_analytics extends \yii\db\Migration {
 				'modifiedAt' => DateUtil::getDateTime()
 		]);
 
-		$config	= Form::findBySlug( 'google-analytics', CoreGlobal::TYPE_SYSTEM );
+		$config	= Form::findBySlug( 'config-google-analytics', CoreGlobal::TYPE_SYSTEM );
 
 		$columns = [ 'formId', 'name', 'label', 'type', 'compress', 'validators', 'order', 'icon', 'htmlOptions' ];
 
@@ -79,8 +79,8 @@ class m170601_072419_google_analytics extends \yii\db\Migration {
 		$columns = [ 'modelId', 'name', 'label', 'type', 'valueType', 'value' ];
 
 		$metas	= [
-			[ $this->site->id, 'global', 'Global', 'ganalytics', 'flag', '1' ],
-			[ $this->site->id, 'global_code', 'Global Code', 'ganalytics', 'text', NULL ]
+			[ $this->site->id, 'global', 'Global', 'google-analytics', 'flag', '1' ],
+			[ $this->site->id, 'global_code', 'Global Code', 'google-analytics', 'text', NULL ]
 		];
 
 		$this->batchInsert( $this->prefix . 'core_site_meta', $columns, $metas );
