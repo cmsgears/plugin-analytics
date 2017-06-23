@@ -1,10 +1,6 @@
 <?php
 namespace cmsgears\analytics\google\widgets;
 
-// Yii Imports
-use \Yii;
-use yii\helpers\Html;
-
 // CMG Imports
 use cmsgears\analytics\google\config\GoogleAnalyticsProperties;
 
