@@ -26,7 +26,7 @@ class GaTracker extends \cmsgears\core\common\base\Widget {
 
         $this->active	= isset( $this->active ) ? $this->active : $properties->isGlobal();
 
-        $this->code		= isset( $this->code) ? $this->code : $properties->getGlobalCode();
+        $this->code		= isset( $this->code ) ? $this->code : $properties->getGlobalCode();
     }
 
 	// Instance Methods --------------------------------------------
