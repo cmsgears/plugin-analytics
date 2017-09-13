@@ -1,5 +1,5 @@
 {
-	"name" : "cmsgears/plugin-analytics-google",
+	"name" : "cmsgears/plugin-google-analytics",
 	"description" : "Google Analytics plugin for CMSGears provide options to configure google analytics.",
 	"homepage" : "http://www.cmsgears.org",
 	"type" : "package",
@@ -12,7 +12,7 @@
 	],
 	"license" : "GPLv3",
 	"support" : {
-		"source" : "http://www.cmsgears.org/downloads/plugins/analytics-google",
+		"source" : "http://www.cmsgears.org/downloads/plugins/google-analytics",
 		"forum" : "http://forum.cmsgears.org/",
 		"resources" : "http://resources.cmsgears.org/",
 		"issues" : "https://www.amazingdesk.com/cmsgears/issues/",
@@ -20,7 +20,7 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"cmsgears\\analytics\\google\\" : ""
+			"cmsgears\\google\\analytics\\" : ""
 		}
 	},
 	"require" : {
