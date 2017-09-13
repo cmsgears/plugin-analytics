@@ -1,5 +1,5 @@
 <?php
-namespace cmsgears\analytics\google\config;
+namespace cmsgears\google\analytics\config;
 
 // CMG Imports
 use cmsgears\core\common\config\CmgProperties;

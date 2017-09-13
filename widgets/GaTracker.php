@@ -1,22 +1,36 @@
 <?php
-namespace cmsgears\analytics\google\widgets;
+namespace cmsgears\google\analytics\widgets;
 
 // CMG Imports
-use cmsgears\analytics\google\config\GoogleAnalyticsProperties;
+use cmsgears\google\analytics\config\GoogleAnalyticsProperties;
 
 class GaTracker extends \cmsgears\core\common\base\Widget {
 
 	// Variables ---------------------------------------------------
 
-	// Public Variables --------------------
+	// Globals -------------------------------
+
+	// Constants --------------
+
+	// Public -----------------
+
+	// Protected --------------
+
+	// Variables -----------------------------
+
+	// Public -----------------
 
 	public $active;
 
 	public $code;
 
-	// Constructor and Initialisation ------------------------------
+	// Protected --------------
 
-	// yii\base\Object
+	// Private ----------------
+
+	// Traits ------------------------------------------------------
+
+	// Constructor and Initialisation ------------------------------
 
     public function init() {
 
@@ -29,11 +43,19 @@ class GaTracker extends \cmsgears\core\common\base\Widget {
         $this->code		= isset( $this->code ) ? $this->code : $properties->getGlobalCode();
     }
 
-	// Instance Methods --------------------------------------------
+	// Instance methods --------------------------------------------
 
-	// yii\base\Widget
+	// Yii interfaces ------------------------
 
-	// cmsgears\core\common\base\Widget
+	// Yii parent classes --------------------
+
+	// yii\base\Widget --------
+
+	// CMG interfaces ------------------------
+
+	// CMG parent classes --------------------
+
+	// GaTracker -----------------------------
 
     public function renderWidget( $config = [] ) {
 
