@@ -1,6 +1,16 @@
 <?php
+/**
+ * This file is part of CMSGears Framework. Please view License file distributed
+ * with the source code for license details.
+ *
+ * @link https://www.cmsgears.org/
+ * @copyright Copyright (c) 2015 VulpineCode Technologies Pvt. Ltd.
+ */
+
 // CMG Imports
 use cmsgears\core\common\config\CoreGlobal;
+
+use cmsgears\core\common\base\Migration;
 
 use cmsgears\core\common\models\entities\Site;
 use cmsgears\core\common\models\entities\User;
@@ -9,7 +19,12 @@ use cmsgears\core\common\models\resources\FormField;
 
 use cmsgears\core\common\utilities\DateUtil;
 
-class m170601_072419_google_analytics extends \yii\db\Migration {
+/**
+ * The google analytics migration inserts the base data required to send analytics data.
+ *
+ * @since 1.0.0
+ */
+class m170601_072419_google_analytics extends Migration {
 
 	// Public Variables
 
@@ -20,9 +35,6 @@ class m170601_072419_google_analytics extends \yii\db\Migration {
 	private $site;
 	private $master;
 
-	private $uploadsDir;
-	private $uploadsUrl;
-
 	public function init() {
 
 		// Table prefix
@@ -30,9 +42,6 @@ class m170601_072419_google_analytics extends \yii\db\Migration {
 
 		$this->site		= Site::findBySlug( CoreGlobal::SITE_MAIN );
 		$this->master	= User::findByUsername( Yii::$app->migration->getSiteMaster() );
-
-		$this->uploadsDir	= Yii::$app->migration->getUploadsDir();
-		$this->uploadsUrl	= Yii::$app->migration->getUploadsUrl();
 
 		Yii::$app->core->setSite( $this->site );
 	}
@@ -49,20 +58,20 @@ class m170601_072419_google_analytics extends \yii\db\Migration {
 	private function insertFileConfig() {
 
 		$this->insert( $this->prefix . 'core_form', [
-				'siteId' => $this->site->id,
-				'createdBy' => $this->master->id, 'modifiedBy' => $this->master->id,
-				'name' => 'Config Google Analytics', 'slug' => 'config-google-analytics',
-				'type' => CoreGlobal::TYPE_SYSTEM,
-				'description' => 'Google analytics configuration form.',
-				'successMessage' => 'All configurations saved successfully.',
-				'captcha' => false,
-				'visibility' => Form::VISIBILITY_PROTECTED,
-				'active' => true, 'userMail' => false,'adminMail' => false,
-				'createdAt' => DateUtil::getDateTime(),
-				'modifiedAt' => DateUtil::getDateTime()
+			'siteId' => $this->site->id,
+			'createdBy' => $this->master->id, 'modifiedBy' => $this->master->id,
+			'name' => 'Config Google Analytics', 'slug' => 'config-google-analytics',
+			'type' => CoreGlobal::TYPE_SYSTEM,
+			'description' => 'Google analytics configuration form.',
+			'successMessage' => 'All configurations saved successfully.',
+			'captcha' => false,
+			'visibility' => Form::VISIBILITY_PROTECTED,
+			'active' => true, 'userMail' => false,'adminMail' => false,
+			'createdAt' => DateUtil::getDateTime(),
+			'modifiedAt' => DateUtil::getDateTime()
 		]);
 
-		$config	= Form::findBySlug( 'config-google-analytics', CoreGlobal::TYPE_SYSTEM );
+		$config	= Form::findBySlugType( 'config-google-analytics', CoreGlobal::TYPE_SYSTEM );
 
 		$columns = [ 'formId', 'name', 'label', 'type', 'compress', 'validators', 'order', 'icon', 'htmlOptions' ];
 
@@ -92,4 +101,5 @@ class m170601_072419_google_analytics extends \yii\db\Migration {
 
 		return true;
 	}
+
 }
