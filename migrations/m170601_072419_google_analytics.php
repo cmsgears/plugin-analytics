@@ -63,10 +63,10 @@ class m170601_072419_google_analytics extends Migration {
 			'name' => 'Config Google Analytics', 'slug' => 'config-google-analytics',
 			'type' => CoreGlobal::TYPE_SYSTEM,
 			'description' => 'Google analytics configuration form.',
-			'successMessage' => 'All configurations saved successfully.',
+			'success' => 'All configurations saved successfully.',
 			'captcha' => false,
 			'visibility' => Form::VISIBILITY_PROTECTED,
-			'active' => true, 'userMail' => false,'adminMail' => false,
+			'status' => Form::STATUS_ACTIVE, 'userMail' => false,'adminMail' => false,
 			'createdAt' => DateUtil::getDateTime(),
 			'modifiedAt' => DateUtil::getDateTime()
 		]);
