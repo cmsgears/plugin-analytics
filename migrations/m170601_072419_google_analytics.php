@@ -76,6 +76,7 @@ class m170601_072419_google_analytics extends Migration {
 		$columns = [ 'formId', 'name', 'label', 'type', 'compress', 'validators', 'order', 'icon', 'htmlOptions' ];
 
 		$fields	= [
+			[ $config->id, 'active', 'Active', FormField::TYPE_TOGGLE, false, 'required', 0, NULL, '{"title":"Active"}' ],
 			[ $config->id, 'global', 'Global', FormField::TYPE_TOGGLE, false, 'required', 0, NULL, '{"title":"Global"}' ],
 			[ $config->id, 'global_code', 'Global Code', FormField::TYPE_TEXT, false, 'required', 0, NULL, '{"title":"Global Code","placeholder":"Global Code"}' ]
 		];
@@ -85,11 +86,12 @@ class m170601_072419_google_analytics extends Migration {
 
 	private function insertDefaultConfig() {
 
-		$columns = [ 'modelId', 'name', 'label', 'type', 'valueType', 'value' ];
+		$columns = [ 'modelId', 'name', 'label', 'type', 'active', 'valueType', 'value', 'data' ];
 
 		$metas	= [
-			[ $this->site->id, 'global', 'Global', 'google-analytics', 'flag', '1' ],
-			[ $this->site->id, 'global_code', 'Global Code', 'google-analytics', 'text', NULL ]
+			[ $this->site->id, 'active', 'Active', 'google-analytics', 1, 'flag', '1', NULL ],
+			[ $this->site->id, 'global', 'Global', 'google-analytics', 1, 'flag', '1', NULL ],
+			[ $this->site->id, 'global_code', 'Global Code', 'google-analytics', 1, 'text', NULL, NULL ]
 		];
 
 		$this->batchInsert( $this->prefix . 'core_site_meta', $columns, $metas );
