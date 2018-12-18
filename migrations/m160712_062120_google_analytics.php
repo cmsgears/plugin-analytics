@@ -24,7 +24,7 @@ use cmsgears\core\common\utilities\DateUtil;
  *
  * @since 1.0.0
  */
-class m170601_072419_google_analytics extends Migration {
+class m160712_062120_google_analytics extends Migration {
 
 	// Public Variables
 
