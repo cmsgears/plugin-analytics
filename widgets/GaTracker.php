@@ -1,10 +1,26 @@
 <?php
+/**
+ * This file is part of CMSGears Framework. Please view License file distributed
+ * with the source code for license details.
+ *
+ * @link https://www.cmsgears.org/
+ * @copyright Copyright (c) 2015 VulpineCode Technologies Pvt. Ltd.
+ */
+
 namespace cmsgears\google\analytics\widgets;
 
 // CMG Imports
 use cmsgears\google\analytics\config\GoogleAnalyticsProperties;
 
-class GaTracker extends \cmsgears\core\common\base\Widget {
+use cmsgears\core\common\base\Widget;
+
+/**
+ * GaTracker widget is pre-configured to add tracker code. It use the global code
+ * as fallback in case the code is not provided.
+ *
+ * @since 1.0.0
+ */
+class GaTracker extends Widget {
 
 	// Variables ---------------------------------------------------
 
@@ -61,4 +77,5 @@ class GaTracker extends \cmsgears\core\common\base\Widget {
 
     	return $this->render( $this->template, [ 'widget' => $this ] );
     }
+
 }

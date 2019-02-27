@@ -1,6 +1,14 @@
 <?php
-$active		= $widget->active;
-$code		= $widget->code;
+/**
+ * This file is part of CMSGears Framework. Please view License file distributed
+ * with the source code for license details.
+ *
+ * @link https://www.cmsgears.org/
+ * @copyright Copyright (c) 2015 VulpineCode Technologies Pvt. Ltd.
+ */
+
+$active	= $widget->active;
+$code	= $widget->code;
 ?>
 
 <?php if( $active && !empty( $code ) ) { ?>
