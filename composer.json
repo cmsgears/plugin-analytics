@@ -1,29 +1,23 @@
 {
-	"name" : "cmsgears/plugin-google-analytics",
-	"description" : "Google Analytics plugin for CMSGears provide options to configure google analytics.",
-	"homepage" : "http://www.cmsgears.org",
-	"type" : "package",
-	"keywords" : [
-		"yii2",
-		"cmsgears",
-		"plugin",
-		"analytics",
-		"google"
-	],
+	"name": "cmsgears/plugin-google-analytics",
+	"description": "Google Analytics plugin for CMSGears provide options to configure google analytics.",
+	"homepage": "http://www.cmsgears.org",
+	"type": "package",
+	"keywords": [ "yii2", "cmsgears", "plugin", "google", "analytics" ],
 	"license": "GPL-3.0-or-later",
-	"support" : {
-		"source" : "http://www.cmsgears.org/downloads/plugins/google-analytics",
-		"forum" : "http://forum.cmsgears.org/",
-		"resources" : "http://resources.cmsgears.org/",
-		"issues" : "https://www.amazingdesk.com/project/cmsgears/issues/",
-		"blog" : "http://cmsgears.tutorials24x7.com/"
+	"support": {
+		"source": "https://www.cmsgears.org/downloads/plugins/google-analytics",
+		"forum": "https://forum.cmsgears.org/",
+		"resources": "https://resources.cmsgears.org/",
+		"issues": "https://www.amazingdesk.com/project/cmsgears/issues/",
+		"blog": "https://cmsgears.tutorials24x7.com/"
 	},
-	"autoload" : {
-		"psr-4" : {
+	"autoload": {
+		"psr-4": {
 			"cmsgears\\google\\analytics\\" : ""
 		}
 	},
-	"require" : {
+	"require": {
 		"cmsgears/module-core" : "*"
 	}
 }

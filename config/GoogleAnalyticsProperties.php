@@ -9,9 +9,6 @@
 
 namespace cmsgears\google\analytics\config;
 
-// CMG Imports
-use cmsgears\core\common\config\Properties;
-
 /**
  * GoogleAnalyticsProperties provide methods to access the properties specific to Google Analytics.
  *
@@ -19,17 +16,19 @@ use cmsgears\core\common\config\Properties;
  *
  * @since 1.0.0
  */
-class GoogleAnalyticsProperties extends Properties {
+class GoogleAnalyticsProperties extends \cmsgears\core\common\config\Properties {
 
 	// Variables ---------------------------------------------------
 
 	// Globals ----------------
 
-	const CONFIG_GOOGLE_ANALYTICS	= 'google-analytics';
+	const CONFIG_GOOGLE_ANALYTICS = 'google-analytics';
 
-	const PROP_GLOGAL				= 'global';
+	const PROP_ACTIVE = 'active';
 
-	const PROP_GLOGAL_CODE			= 'global_code';
+	const PROP_GLOGAL = 'global';
+
+	const PROP_GLOGAL_CODE = 'global_code';
 
 	// Public -----------------
 
@@ -71,6 +70,16 @@ class GoogleAnalyticsProperties extends Properties {
 	// GoogleAnalyticsProperties -------------
 
 	/**
+	 * Check whether Google Analytics is enabled.
+	 *
+	 * @return boolean
+	 */
+	public function isActive() {
+
+		return $this->properties[ self::PROP_ACTIVE ];
+	}
+
+	/**
 	 * Check whether Google Analytics is enabled on global level.
 	 *
 	 * @return boolean
@@ -82,7 +91,7 @@ class GoogleAnalyticsProperties extends Properties {
 
 	/**
 	 * Returns the global code.
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public function getGlobalCode() {
