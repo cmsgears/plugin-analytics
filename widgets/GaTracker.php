@@ -12,15 +12,13 @@ namespace cmsgears\google\analytics\widgets;
 // CMG Imports
 use cmsgears\google\analytics\config\GoogleAnalyticsProperties;
 
-use cmsgears\core\common\base\Widget;
-
 /**
  * GaTracker widget is pre-configured to add tracker code. It use the global code
  * as fallback in case the code is not provided.
  *
  * @since 1.0.0
  */
-class GaTracker extends Widget {
+class GaTracker extends \cmsgears\core\common\base\Widget {
 
 	// Variables ---------------------------------------------------
 
@@ -52,11 +50,11 @@ class GaTracker extends Widget {
 
         parent::init();
 
-        $properties 	= GoogleAnalyticsProperties::getInstance();
+        $properties = GoogleAnalyticsProperties::getInstance();
 
-        $this->active	= isset( $this->active ) ? $this->active : $properties->isGlobal();
+        $this->active = isset( $this->active ) ? $this->active : $properties->isGlobal();
 
-        $this->code		= isset( $this->code ) ? $this->code : $properties->getGlobalCode();
+        $this->code = isset( $this->code ) ? $this->code : $properties->getGlobalCode();
     }
 
 	// Instance methods --------------------------------------------
